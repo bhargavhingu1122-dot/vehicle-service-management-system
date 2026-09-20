@@ -1,0 +1,224 @@
+/* AdminLogin.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --admin-primary: #ff3b30;
+    --admin-gradient: linear-gradient(135deg, #ff3b30, #990000);
+    --bg-dark: #0f111a;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+.admin-login-page {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/Red_Car_2.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 5, 5, 0.85);
+    /* Slightly darker for admin */
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.admin-login-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 420px;
+    padding: 3.5rem;
+    background: rgba(15, 17, 26, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 59, 48, 0.2);
+    /* Red tint border */
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    animation: slideUp 0.6s ease-out;
+}
+
+.admin-brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.admin-brand-logo i {
+    font-size: 2.5rem;
+    color: var(--admin-primary);
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.admin-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+}
+
+.admin-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.admin-input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.admin-input-group input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem 3.5rem 1rem 3.5rem;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.admin-input-group input:focus {
+    border-color: var(--admin-primary);
+    background: rgba(255, 59, 48, 0.03);
+    box-shadow: 0 0 20px rgba(255, 59, 48, 0.1);
+}
+
+.admin-input-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.25rem;
+    pointer-events: none;
+}
+
+.admin-password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.admin-password-toggle:hover {
+    color: var(--admin-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.admin-btn-primary {
+    width: 100%;
+    background: var(--admin-gradient);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 25px rgba(255, 59, 48, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.admin-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 59, 48, 0.5);
+}
+
+.admin-success {
+    background: #10b981 !important;
+}
+
+.admin-footer-text {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.admin-back-btn {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.admin-back-btn:hover {
+    opacity: 1;
+    transform: translateX(-5px);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spin-anim {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,320 @@
+/* InvoiceView.css - Clean, Minimal Print-Ready Invoice Styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.invoice-view-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8f9fa; /* slightly off whitespace for the wrapper */
+}
+
+/* Loading & Error States */
+.invoice-loading, .invoice-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    color: #666;
+    gap: 1rem;
+}
+
+.invoice-loading i, .invoice-error i {
+    font-size: 3rem;
+}
+
+.invoice-error {
+    color: #ef4444;
+}
+
+/* Controls (Hidden on Print) */
+.invoice-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+}
+
+.invoice-back-btn, .invoice-print-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.invoice-back-btn {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.invoice-back-btn:hover {
+    background: #cbd5e1;
+}
+
+.invoice-print-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.invoice-print-btn:hover {
+    background: #1d4ed8;
+}
+
+/* The Paper Sheet */
+.invoice-paper {
+    background: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 3rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Typography Defaults for Paper */
+.invoice-paper h1, .invoice-paper h2, .invoice-paper h3, .invoice-paper p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Header Section */
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.garage-info h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.garage-info p {
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+.invoice-meta {
+    text-align: right;
+}
+
+.invoice-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e2e8f0; /* Subtle watermark-like header */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.meta-label {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.meta-value {
+    color: #0f172a;
+    font-weight: 600;
+    min-width: 120px;
+}
+
+/* Divider */
+.invoice-divider {
+    height: 2px;
+    background: #f1f5f9;
+    margin: 2rem 0;
+}
+
+/* Details Grid */
+.invoice-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.details-box h3, .service-context h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+}
+
+.details-box p, .service-context p {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 0.25rem;
+}
+
+.strong {
+    font-weight: 600;
+    color: #0f172a !important;
+}
+
+.label {
+    color: #64748b;
+    display: inline-block;
+    width: 80px;
+}
+
+/* Service Context */
+.service-context {
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    margin-bottom: 2.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+/* Charges Table */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2.5rem;
+}
+
+.invoice-table th, .invoice-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.invoice-table th {
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+    font-size: 0.9rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.invoice-table td {
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+/* Table Footer / Totals */
+.invoice-table tfoot td {
+    border-bottom: none;
+    padding-top: 1.5rem;
+}
+
+.total-label {
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.total-value {
+    font-size: 1.25rem;
+    color: #ef4444 !important; /* Subtle red accent for total */
+}
+
+/* Footer Section */
+.invoice-footer {
+    text-align: center;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 2rem;
+}
+
+.thank-you {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem !important;
+}
+
+.footer-note {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Bottom-right Print Action */
+.invoice-bottom-actions {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.invoice-print-btn--large {
+    padding: 0.75rem 1.75rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    gap: 0.6rem !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    transition: all 0.25s ease !important;
+}
+
+.invoice-print-btn--large:hover {
+    background: #1d4ed8 !important;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    transform: translateY(-1px);
+}
+
+.invoice-print-btn--large i {
+    font-size: 1.15rem;
+}
+
+/* --- Print Styles --- */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .invoice-view-container {
+        padding: 0;
+        background: transparent;
+    }
+
+    .invoice-paper {
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Additional adjustments to ensure colors print correctly if user enables background graphics */
+    .service-context, .invoice-table th {
+        background: transparent !important;
+        border-bottom: 1px solid #ccc;
+    }
+}

@@ -1,0 +1,642 @@
+/* MyServicesPage.css - Home-Style Redesign */
+
+:root {
+    --bg-dark-tracker: #0a0a14;
+    --acc-red-tracker: #ff3b30;
+    --acc-red-glow: rgba(255, 59, 48, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+}
+
+.my-services-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+    /* Matching homepage */
+}
+
+/* --- List View (Restored Overview) --- */
+.services-list-view {
+    padding: 0;
+}
+
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 35px;
+}
+
+.header-text h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.header-text p {
+    color: var(--text-secondary);
+    margin: 5px 0 0 0;
+    font-size: 1rem;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 5px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--acc-red-tracker);
+    color: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 25px;
+}
+
+.overview-service-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 28px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    /* Fix staggering alignment */
+}
+
+.overview-service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 59, 48, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.overview-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.v-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.v-info h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    text-align: left;
+}
+
+.v-plate {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 2px;
+}
+
+.v-status-badge {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-in-progress {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.status-pending {
+    background: rgba(255, 171, 0, 0.15);
+    color: #ffab00;
+}
+
+.status-completed {
+    background: rgba(0, 200, 83, 0.15);
+    color: #00c853;
+}
+
+.overview-card-body {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.v-type {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #fff;
+    text-align: left;
+}
+
+.v-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
+.overview-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+    margin-top: 5px;
+}
+
+.v-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.v-meta i {
+    color: var(--acc-red-tracker);
+}
+
+.v-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--acc-red-tracker);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* --- Detail View (Home-Style Tracking) --- */
+.service-tracking-dashboard {
+    background: linear-gradient(135deg, rgba(10, 10, 20, 0.98) 0%, rgba(0, 0, 0, 1) 100%);
+    min-height: calc(100vh - 100px);
+    border-radius: 30px;
+    padding: 40px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.tracking-header {
+    margin-bottom: 50px;
+}
+
+.back-link-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    transition: color 0.3s ease;
+}
+
+.back-link-btn:hover {
+    color: var(--acc-red-tracker);
+}
+
+.tracking-title-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.live-badge-glow {
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: var(--acc-red-tracker);
+    border: 1px solid var(--acc-red-tracker);
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    display: inline-block;
+    letter-spacing: 2px;
+    animation: glowText 2s infinite ease-in-out;
+}
+
+@keyframes glowText {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 10px var(--acc-red-tracker);
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.tracking-title-info h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.vehicle-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin: 5px 0;
+}
+
+.helper-text {
+    font-size: 0.9rem;
+    color: var(--acc-red-tracker);
+    font-weight: 600;
+}
+
+.service-id-tag {
+    background: var(--glass-bg);
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+/* Horizontal Progress Tracker (Homepage Style) */
+.horizontal-tracker-block {
+    padding: 60px 40px;
+    margin-bottom: 40px;
+}
+
+.hs-progress-track {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    height: 4px;
+}
+
+.hs-progress-line-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hs-progress-line-fill {
+    position: absolute;
+    height: 100%;
+    background: var(--acc-red-tracker);
+    box-shadow: 0 0 15px var(--acc-red-glow);
+}
+
+.hs-moving-car {
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.hs-moving-car i {
+    font-size: 2.2rem;
+    color: var(--acc-red-tracker);
+    filter: drop-shadow(0 0 8px var(--acc-red-glow));
+}
+
+.car-glow {
+    width: 40px;
+    height: 15px;
+    background: var(--acc-red-glow);
+    filter: blur(8px);
+    border-radius: 50%;
+    margin-top: -10px;
+}
+
+.hs-tracker-steps-wrapper {
+    position: absolute;
+    top: -4px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.hs-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100px;
+}
+
+.hs-step-node {
+    width: 24px;
+    height: 24px;
+    background: #111;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    position: relative;
+    color: #444;
+}
+
+.hs-step.completed .hs-step-node {
+    background: var(--acc-red-tracker);
+    border-color: var(--acc-red-tracker);
+    color: white;
+}
+
+.hs-step.active .hs-step-node {
+    border-color: var(--acc-red-tracker);
+    box-shadow: 0 0 15px var(--acc-red-glow);
+}
+
+.node-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--acc-red-tracker);
+    animation: pulseNode 2s infinite ease-out;
+}
+
+@keyframes pulseNode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.step-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+.hs-step.active .step-label {
+    color: white;
+}
+
+.hs-step.upcoming {
+    opacity: 0.4;
+}
+
+/* Grid Sections */
+.tracking-mid-section,
+.tracking-bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.glass-panel {
+    margin-top: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.card-label {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--glass-border);
+}
+
+/* Status Card */
+.status-display {
+    margin-bottom: 30px;
+}
+
+.status-display h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.glow-text-red {
+    color: var(--acc-red-tracker);
+    text-shadow: 0 0 20px var(--acc-red-glow);
+}
+
+.status-display p {
+    color: var(--text-secondary);
+    margin: 5px 0 0 0;
+}
+
+.status-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.meta-item label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.meta-item span {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Activity Feed */
+.activity-list-v {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activity-item-v {
+    display: flex;
+    gap: 15px;
+}
+
+.activity-dot-v {
+    width: 8px;
+    height: 8px;
+    background: var(--acc-red-tracker);
+    border-radius: 50%;
+    margin-top: 6px;
+    box-shadow: 0 0 10px var(--acc-red-glow);
+}
+
+.activity-info-v strong {
+    display: block;
+    font-size: 1.05rem;
+}
+
+.activity-info-v p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+.activity-time-v {
+    font-size: 0.75rem;
+    color: var(--acc-red-tracker);
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+/* Service Details Card */
+.mini-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.mini-item label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.mini-item p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.mini-item.full-width {
+    grid-column: span 2;
+}
+
+.mini-item.full-width p {
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* Actions Card */
+.action-buttons-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hs-action-btn {
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.hs-action-btn.primary {
+    background: white;
+    color: black;
+}
+
+.hs-action-btn.primary:hover {
+    transform: scale(1.02);
+}
+
+.hs-action-btn.danger {
+    background: rgba(255, 59, 48, 0.1);
+    color: var(--acc-red-tracker);
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.hs-action-btn.danger:hover {
+    background: var(--acc-red-tracker);
+    color: white;
+}
+
+.hs-action-btn.ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+}
+
+.hs-action-btn.ghost:hover {
+    border-color: var(--acc-red-tracker);
+    color: white;
+}
+
+@media (max-width: 1000px) {
+
+    .tracking-mid-section,
+    .tracking-bottom-section {
+        grid-template-columns: 1fr;
+    }
+
+    .tracking-header h1 {
+        font-size: 2.8rem;
+    }
+
+    .status-display h2 {
+        font-size: 2.4rem;
+    }
+}

@@ -1,0 +1,408 @@
+/* ACRepairService.css */
+
+.ac-page {
+  background-color: #0f111a;
+  background-image: url('../assets/Red_Car_2.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 40px 5%;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.ac-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 17, 26, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+/* Ensure all content is above overlay */
+.ac-page > * {
+  position: relative;
+  z-index: 5;
+}
+
+.ac-back-btn {
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  color: #a1a1aa;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.ac-back-btn:hover {
+  color: #007aff;
+  transform: translateX(-5px);
+}
+
+/* Hero Section */
+.ac-hero {
+  text-align: center;
+  padding: 100px 0 60px;
+  position: relative;
+}
+
+.ac-badge {
+  background: rgba(0, 122, 255, 0.1);
+  border: 1px solid rgba(0, 122, 255, 0.3);
+  color: #007aff;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ac-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.ac-title span {
+  display: block;
+  background: linear-gradient(90deg, #fff, #a1a1aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ac-subtitle {
+  color: #a1a1aa;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.ac-hero-gfx {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.ac-hero-icon {
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 0 30px rgba(0, 122, 255, 0.4));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.ac-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 122, 255, 0.1), transparent 70%);
+  z-index: -1;
+}
+
+/* Details Bar */
+.ac-details-bar {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  gap: 20px;
+}
+
+.ac-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ac-detail-item i {
+  font-size: 1.8rem;
+  color: #007aff;
+}
+
+.ac-detail-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ac-detail-item p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Section General */
+.ac-section {
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ac-section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Grid Layouts */
+.ac-includes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.ac-include-card {
+  padding: 35px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ac-include-card i {
+  font-size: 2.5rem;
+  color: #007aff;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.ac-include-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.ac-include-card p {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Why It Matters Grid */
+.ac-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.ac-benefit-card {
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.ac-benefit-card i {
+  font-size: 2.8rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+
+.ac-benefit-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Service Process Timeline */
+.ac-process-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+.ac-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  position: relative;
+  z-index: 2;
+}
+
+.ac-step-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #007aff;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.ac-process-step:hover .ac-step-icon {
+  background: rgba(0, 122, 255, 0.1);
+  border-color: #007aff;
+  box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.ac-process-step p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  color: #a1a1aa;
+}
+
+.ac-step-connector {
+  position: absolute;
+  top: 30px;
+  left: 105px;
+  right: -45px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Warnings Grid */
+.ac-warnings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.ac-warning-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ac-warning-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: #ef4444;
+}
+
+.ac-warning-icon {
+  font-size: 1.4rem;
+  color: #ef4444;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 0.3;
+}
+
+.ac-warning-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ac-warning-content i {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.ac-warning-content p {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Did You Know */
+.ac-did-you-know {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px;
+}
+
+.ac-dyk-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
+.ac-dyk-content i {
+  font-size: 2.2rem;
+  color: #fbd38d;
+}
+
+/* Final CTA */
+.ac-final-cta {
+  text-align: center;
+  padding: 80px 0;
+  background: radial-gradient(circle at center, rgba(0, 122, 255, 0.1), transparent 70%);
+}
+
+.ac-final-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.ac-cta-btn {
+  padding: 18px 40px;
+  background: linear-gradient(135deg, #007aff, #af52de);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.4s ease;
+  box-shadow: 0 15px 30px rgba(0, 122, 255, 0.3);
+}
+
+.ac-cta-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(175, 82, 222, 0.5);
+}
+
+/* Footer */
+.ac-footer {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ac-title { font-size: 2.5rem; }
+  .ac-details-bar { flex-direction: column; padding: 20px; align-items: flex-start; }
+  .ac-process-timeline { flex-direction: column; gap: 40px; }
+  .ac-step-connector { display: none; }
+  .ac-hero { padding-top: 80px; }
+  .ac-back-btn { top: 20px; }
+}
